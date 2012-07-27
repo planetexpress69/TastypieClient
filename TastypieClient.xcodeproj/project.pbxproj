@@ -1,0 +1,269 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B1BE9B315C2F06F00CD791C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1BE9B215C2F06F00CD791C /* UIKit.framework */; };
+		5B1BE9B515C2F06F00CD791C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1BE9B415C2F06F00CD791C /* Foundation.framework */; };
+		5B1BE9B715C2F06F00CD791C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1BE9B615C2F06F00CD791C /* CoreGraphics.framework */; };
+		5B1BE9BD15C2F06F00CD791C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B1BE9BB15C2F06F00CD791C /* InfoPlist.strings */; };
+		5B1BE9BF15C2F06F00CD791C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1BE9BE15C2F06F00CD791C /* main.m */; };
+		5B1BE9C315C2F06F00CD791C /* TBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1BE9C215C2F06F00CD791C /* TBAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5B1BE9AE15C2F06E00CD791C /* TastypieClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TastypieClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B1BE9B215C2F06F00CD791C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5B1BE9B415C2F06F00CD791C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5B1BE9B615C2F06F00CD791C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5B1BE9BA15C2F06F00CD791C /* TastypieClient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TastypieClient-Info.plist"; sourceTree = "<group>"; };
+		5B1BE9BC15C2F06F00CD791C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5B1BE9BE15C2F06F00CD791C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5B1BE9C015C2F06F00CD791C /* TastypieClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TastypieClient-Prefix.pch"; sourceTree = "<group>"; };
+		5B1BE9C115C2F06F00CD791C /* TBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBAppDelegate.h; sourceTree = "<group>"; };
+		5B1BE9C215C2F06F00CD791C /* TBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B1BE9AB15C2F06E00CD791C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B1BE9B315C2F06F00CD791C /* UIKit.framework in Frameworks */,
+				5B1BE9B515C2F06F00CD791C /* Foundation.framework in Frameworks */,
+				5B1BE9B715C2F06F00CD791C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B1BE9A315C2F06E00CD791C = {
+			isa = PBXGroup;
+			children = (
+				5B1BE9B815C2F06F00CD791C /* TastypieClient */,
+				5B1BE9B115C2F06E00CD791C /* Frameworks */,
+				5B1BE9AF15C2F06E00CD791C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5B1BE9AF15C2F06E00CD791C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B1BE9AE15C2F06E00CD791C /* TastypieClient.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B1BE9B115C2F06E00CD791C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B1BE9B215C2F06F00CD791C /* UIKit.framework */,
+				5B1BE9B415C2F06F00CD791C /* Foundation.framework */,
+				5B1BE9B615C2F06F00CD791C /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B1BE9B815C2F06F00CD791C /* TastypieClient */ = {
+			isa = PBXGroup;
+			children = (
+				5B1BE9C115C2F06F00CD791C /* TBAppDelegate.h */,
+				5B1BE9C215C2F06F00CD791C /* TBAppDelegate.m */,
+				5B1BE9B915C2F06F00CD791C /* Supporting Files */,
+			);
+			path = TastypieClient;
+			sourceTree = "<group>";
+		};
+		5B1BE9B915C2F06F00CD791C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B1BE9BA15C2F06F00CD791C /* TastypieClient-Info.plist */,
+				5B1BE9BB15C2F06F00CD791C /* InfoPlist.strings */,
+				5B1BE9BE15C2F06F00CD791C /* main.m */,
+				5B1BE9C015C2F06F00CD791C /* TastypieClient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B1BE9AD15C2F06E00CD791C /* TastypieClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B1BE9C615C2F06F00CD791C /* Build configuration list for PBXNativeTarget "TastypieClient" */;
+			buildPhases = (
+				5B1BE9AA15C2F06E00CD791C /* Sources */,
+				5B1BE9AB15C2F06E00CD791C /* Frameworks */,
+				5B1BE9AC15C2F06E00CD791C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TastypieClient;
+			productName = TastypieClient;
+			productReference = 5B1BE9AE15C2F06E00CD791C /* TastypieClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B1BE9A515C2F06E00CD791C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TB;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Martin Kautz";
+			};
+			buildConfigurationList = 5B1BE9A815C2F06E00CD791C /* Build configuration list for PBXProject "TastypieClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5B1BE9A315C2F06E00CD791C;
+			productRefGroup = 5B1BE9AF15C2F06E00CD791C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B1BE9AD15C2F06E00CD791C /* TastypieClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B1BE9AC15C2F06E00CD791C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B1BE9BD15C2F06F00CD791C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B1BE9AA15C2F06E00CD791C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B1BE9BF15C2F06F00CD791C /* main.m in Sources */,
+				5B1BE9C315C2F06F00CD791C /* TBAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5B1BE9BB15C2F06F00CD791C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B1BE9BC15C2F06F00CD791C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B1BE9C415C2F06F00CD791C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5B1BE9C515C2F06F00CD791C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B1BE9C715C2F06F00CD791C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TastypieClient/TastypieClient-Prefix.pch";
+				INFOPLIST_FILE = "TastypieClient/TastypieClient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5B1BE9C815C2F06F00CD791C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TastypieClient/TastypieClient-Prefix.pch";
+				INFOPLIST_FILE = "TastypieClient/TastypieClient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B1BE9A815C2F06E00CD791C /* Build configuration list for PBXProject "TastypieClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B1BE9C415C2F06F00CD791C /* Debug */,
+				5B1BE9C515C2F06F00CD791C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B1BE9C615C2F06F00CD791C /* Build configuration list for PBXNativeTarget "TastypieClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B1BE9C715C2F06F00CD791C /* Debug */,
+				5B1BE9C815C2F06F00CD791C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B1BE9A515C2F06E00CD791C /* Project object */;
+}
