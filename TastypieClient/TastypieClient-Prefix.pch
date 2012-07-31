@@ -12,3 +12,9 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#import "MKNetworkKit.h"
+
+
+#define API_HOST @"10.0.0.170"
+#define API_PATH @"api/v1/persons/"

@@ -7,15 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B13D27C15C7C93900C1985E /* TBAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B13D27A15C7C93900C1985E /* TBAddViewController.m */; };
+		5B13D27D15C7C93900C1985E /* TBAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B13D27B15C7C93900C1985E /* TBAddViewController.xib */; };
 		5B1BE9B315C2F06F00CD791C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1BE9B215C2F06F00CD791C /* UIKit.framework */; };
 		5B1BE9B515C2F06F00CD791C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1BE9B415C2F06F00CD791C /* Foundation.framework */; };
 		5B1BE9B715C2F06F00CD791C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1BE9B615C2F06F00CD791C /* CoreGraphics.framework */; };
 		5B1BE9BD15C2F06F00CD791C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B1BE9BB15C2F06F00CD791C /* InfoPlist.strings */; };
 		5B1BE9BF15C2F06F00CD791C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1BE9BE15C2F06F00CD791C /* main.m */; };
 		5B1BE9C315C2F06F00CD791C /* TBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1BE9C215C2F06F00CD791C /* TBAppDelegate.m */; };
+		5B1F877415C6D48700CF1684 /* TBTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1F877215C6D48700CF1684 /* TBTableViewController.m */; };
+		5B1F877515C6D48700CF1684 /* TBTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1F877315C6D48700CF1684 /* TBTableViewController.xib */; };
+		5B1F877915C6DD1700CF1684 /* TBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1F877715C6DD1600CF1684 /* TBDetailViewController.m */; };
+		5B1F877A15C6DD1700CF1684 /* TBDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1F877815C6DD1600CF1684 /* TBDetailViewController.xib */; };
+		5B482C4915C676E300D80691 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 5B482BC415C676E300D80691 /* CHANGELOG.md */; };
+		5B482C4A15C676E300D80691 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B482BC615C676E300D80691 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5B482C4B15C676E300D80691 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5B482BC715C676E300D80691 /* README.md */; };
+		5B482C6215C676E300D80691 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B482BFF15C676E300D80691 /* NSData+Base64.m */; };
+		5B482C6315C676E300D80691 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B482C0115C676E300D80691 /* NSDate+RFC1123.m */; };
+		5B482C6415C676E300D80691 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B482C0315C676E300D80691 /* NSDictionary+RequestEncoding.m */; };
+		5B482C6515C676E300D80691 /* NSString+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B482C0515C676E300D80691 /* NSString+MKNetworkKitAdditions.m */; };
+		5B482C6615C676E300D80691 /* UIAlertView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B482C0715C676E300D80691 /* UIAlertView+MKNetworkKitAdditions.m */; };
+		5B482C6715C676E300D80691 /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B482C0915C676E300D80691 /* MKNetworkEngine.m */; };
+		5B482C6815C676E300D80691 /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B482C0C15C676E300D80691 /* MKNetworkOperation.m */; };
+		5B482C6915C676E300D80691 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B482C0F15C676E300D80691 /* Reachability.m */; };
+		5B482C6B15C676E300D80691 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 5B482C1715C676E300D80691 /* README.mdown */; };
+		5B482C6F15C676E300D80691 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 5B482C1D15C676E300D80691 /* LICENSE.md */; };
+		5B482C7015C676E300D80691 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5B482C1E15C676E300D80691 /* README.md */; };
+		5B482C7C15C676E300D80691 /* bg-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B482C3615C676E300D80691 /* bg-yellow.png */; };
+		5B482C7D15C676E300D80691 /* bg-yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B482C3715C676E300D80691 /* bg-yellow@2x.png */; };
+		5B482C7E15C676E300D80691 /* YRDropdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B482C3915C676E300D80691 /* YRDropdownView.m */; };
+		5B482C9215C677E200D80691 /* TastypieEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B482C9115C677E200D80691 /* TastypieEngine.m */; };
+		5B482C9615C67F8E00D80691 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B482C9515C67F8E00D80691 /* Security.framework */; };
+		5B482C9815C67F9900D80691 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B482C9715C67F9800D80691 /* SystemConfiguration.framework */; };
+		5B482C9A15C67FA000D80691 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B482C9915C67FA000D80691 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B13D27915C7C93900C1985E /* TBAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAddViewController.h; sourceTree = "<group>"; };
+		5B13D27A15C7C93900C1985E /* TBAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAddViewController.m; sourceTree = "<group>"; };
+		5B13D27B15C7C93900C1985E /* TBAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBAddViewController.xib; sourceTree = "<group>"; };
 		5B1BE9AE15C2F06E00CD791C /* TastypieClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TastypieClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1BE9B215C2F06F00CD791C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5B1BE9B415C2F06F00CD791C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -26,6 +56,46 @@
 		5B1BE9C015C2F06F00CD791C /* TastypieClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TastypieClient-Prefix.pch"; sourceTree = "<group>"; };
 		5B1BE9C115C2F06F00CD791C /* TBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBAppDelegate.h; sourceTree = "<group>"; };
 		5B1BE9C215C2F06F00CD791C /* TBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBAppDelegate.m; sourceTree = "<group>"; };
+		5B1F877115C6D48700CF1684 /* TBTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTableViewController.h; sourceTree = "<group>"; };
+		5B1F877215C6D48700CF1684 /* TBTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTableViewController.m; sourceTree = "<group>"; };
+		5B1F877315C6D48700CF1684 /* TBTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBTableViewController.xib; sourceTree = "<group>"; };
+		5B1F877615C6DD1600CF1684 /* TBDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBDetailViewController.h; sourceTree = "<group>"; };
+		5B1F877715C6DD1600CF1684 /* TBDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBDetailViewController.m; sourceTree = "<group>"; };
+		5B1F877815C6DD1600CF1684 /* TBDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBDetailViewController.xib; sourceTree = "<group>"; };
+		5B482BC415C676E300D80691 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		5B482BC515C676E300D80691 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		5B482BC615C676E300D80691 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		5B482BC715C676E300D80691 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		5B482BFE15C676E300D80691 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		5B482BFF15C676E300D80691 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		5B482C0015C676E300D80691 /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
+		5B482C0115C676E300D80691 /* NSDate+RFC1123.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RFC1123.m"; sourceTree = "<group>"; };
+		5B482C0215C676E300D80691 /* NSDictionary+RequestEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RequestEncoding.h"; sourceTree = "<group>"; };
+		5B482C0315C676E300D80691 /* NSDictionary+RequestEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RequestEncoding.m"; sourceTree = "<group>"; };
+		5B482C0415C676E300D80691 /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		5B482C0515C676E300D80691 /* NSString+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		5B482C0615C676E300D80691 /* UIAlertView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		5B482C0715C676E300D80691 /* UIAlertView+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		5B482C0815C676E300D80691 /* MKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
+		5B482C0915C676E300D80691 /* MKNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkEngine.m; sourceTree = "<group>"; };
+		5B482C0A15C676E300D80691 /* MKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
+		5B482C0B15C676E300D80691 /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
+		5B482C0C15C676E300D80691 /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
+		5B482C0E15C676E300D80691 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		5B482C0F15C676E300D80691 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		5B482C1215C676E300D80691 /* MKNetworkKit-iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKNetworkKit-iOS-Prefix.pch"; sourceTree = "<group>"; };
+		5B482C1715C676E300D80691 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
+		5B482C1D15C676E300D80691 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
+		5B482C1E15C676E300D80691 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		5B482C3615C676E300D80691 /* bg-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-yellow.png"; sourceTree = "<group>"; };
+		5B482C3715C676E300D80691 /* bg-yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-yellow@2x.png"; sourceTree = "<group>"; };
+		5B482C3815C676E300D80691 /* YRDropdownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDropdownView.h; sourceTree = "<group>"; };
+		5B482C3915C676E300D80691 /* YRDropdownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRDropdownView.m; sourceTree = "<group>"; };
+		5B482C9015C677E200D80691 /* TastypieEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TastypieEngine.h; sourceTree = "<group>"; };
+		5B482C9115C677E200D80691 /* TastypieEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TastypieEngine.m; sourceTree = "<group>"; };
+		5B482C9515C67F8E00D80691 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5B482C9715C67F9800D80691 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5B482C9915C67FA000D80691 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +103,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B482C9A15C67FA000D80691 /* CFNetwork.framework in Frameworks */,
+				5B482C9815C67F9900D80691 /* SystemConfiguration.framework in Frameworks */,
+				5B482C9615C67F8E00D80691 /* Security.framework in Frameworks */,
 				5B1BE9B315C2F06F00CD791C /* UIKit.framework in Frameworks */,
 				5B1BE9B515C2F06F00CD791C /* Foundation.framework in Frameworks */,
 				5B1BE9B715C2F06F00CD791C /* CoreGraphics.framework in Frameworks */,
@@ -62,6 +135,9 @@
 		5B1BE9B115C2F06E00CD791C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B482C9915C67FA000D80691 /* CFNetwork.framework */,
+				5B482C9715C67F9800D80691 /* SystemConfiguration.framework */,
+				5B482C9515C67F8E00D80691 /* Security.framework */,
 				5B1BE9B215C2F06F00CD791C /* UIKit.framework */,
 				5B1BE9B415C2F06F00CD791C /* Foundation.framework */,
 				5B1BE9B615C2F06F00CD791C /* CoreGraphics.framework */,
@@ -72,9 +148,21 @@
 		5B1BE9B815C2F06F00CD791C /* TastypieClient */ = {
 			isa = PBXGroup;
 			children = (
+				5B1F877115C6D48700CF1684 /* TBTableViewController.h */,
+				5B1F877215C6D48700CF1684 /* TBTableViewController.m */,
+				5B1F877315C6D48700CF1684 /* TBTableViewController.xib */,
+				5B1F877615C6DD1600CF1684 /* TBDetailViewController.h */,
+				5B1F877715C6DD1600CF1684 /* TBDetailViewController.m */,
+				5B1F877815C6DD1600CF1684 /* TBDetailViewController.xib */,
+				5B13D27915C7C93900C1985E /* TBAddViewController.h */,
+				5B13D27A15C7C93900C1985E /* TBAddViewController.m */,
+				5B13D27B15C7C93900C1985E /* TBAddViewController.xib */,
+				5B482BC115C676B600D80691 /* 3rd party */,
 				5B1BE9C115C2F06F00CD791C /* TBAppDelegate.h */,
 				5B1BE9C215C2F06F00CD791C /* TBAppDelegate.m */,
 				5B1BE9B915C2F06F00CD791C /* Supporting Files */,
+				5B482C9015C677E200D80691 /* TastypieEngine.h */,
+				5B482C9115C677E200D80691 /* TastypieEngine.m */,
 			);
 			path = TastypieClient;
 			sourceTree = "<group>";
@@ -88,6 +176,117 @@
 				5B1BE9C015C2F06F00CD791C /* TastypieClient-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B482BC115C676B600D80691 /* 3rd party */ = {
+			isa = PBXGroup;
+			children = (
+				5B482BC315C676E300D80691 /* JSONKit */,
+				5B482BC815C676E300D80691 /* MKNetworkKit */,
+				5B482C1C15C676E300D80691 /* YRDropdownView */,
+			);
+			name = "3rd party";
+			sourceTree = "<group>";
+		};
+		5B482BC315C676E300D80691 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				5B482BC415C676E300D80691 /* CHANGELOG.md */,
+				5B482BC515C676E300D80691 /* JSONKit.h */,
+				5B482BC615C676E300D80691 /* JSONKit.m */,
+				5B482BC715C676E300D80691 /* README.md */,
+			);
+			name = JSONKit;
+			path = ../../../github/local/3rd_party/JSONKit;
+			sourceTree = "<group>";
+		};
+		5B482BC815C676E300D80691 /* MKNetworkKit */ = {
+			isa = PBXGroup;
+			children = (
+				5B482BFC15C676E300D80691 /* MKNetworkKit */,
+				5B482C1015C676E300D80691 /* MKNetworkKit-iOS */,
+				5B482C1715C676E300D80691 /* README.mdown */,
+			);
+			name = MKNetworkKit;
+			path = ../../../github/local/3rd_party/MKNetworkKit;
+			sourceTree = "<group>";
+		};
+		5B482BFC15C676E300D80691 /* MKNetworkKit */ = {
+			isa = PBXGroup;
+			children = (
+				5B482BFD15C676E300D80691 /* Categories */,
+				5B482C0815C676E300D80691 /* MKNetworkEngine.h */,
+				5B482C0915C676E300D80691 /* MKNetworkEngine.m */,
+				5B482C0A15C676E300D80691 /* MKNetworkKit.h */,
+				5B482C0B15C676E300D80691 /* MKNetworkOperation.h */,
+				5B482C0C15C676E300D80691 /* MKNetworkOperation.m */,
+				5B482C0D15C676E300D80691 /* Reachability */,
+			);
+			path = MKNetworkKit;
+			sourceTree = "<group>";
+		};
+		5B482BFD15C676E300D80691 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5B482BFE15C676E300D80691 /* NSData+Base64.h */,
+				5B482BFF15C676E300D80691 /* NSData+Base64.m */,
+				5B482C0015C676E300D80691 /* NSDate+RFC1123.h */,
+				5B482C0115C676E300D80691 /* NSDate+RFC1123.m */,
+				5B482C0215C676E300D80691 /* NSDictionary+RequestEncoding.h */,
+				5B482C0315C676E300D80691 /* NSDictionary+RequestEncoding.m */,
+				5B482C0415C676E300D80691 /* NSString+MKNetworkKitAdditions.h */,
+				5B482C0515C676E300D80691 /* NSString+MKNetworkKitAdditions.m */,
+				5B482C0615C676E300D80691 /* UIAlertView+MKNetworkKitAdditions.h */,
+				5B482C0715C676E300D80691 /* UIAlertView+MKNetworkKitAdditions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		5B482C0D15C676E300D80691 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				5B482C0E15C676E300D80691 /* Reachability.h */,
+				5B482C0F15C676E300D80691 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		5B482C1015C676E300D80691 /* MKNetworkKit-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5B482C1115C676E300D80691 /* MKNetworkKit-iOS */,
+			);
+			path = "MKNetworkKit-iOS";
+			sourceTree = "<group>";
+		};
+		5B482C1115C676E300D80691 /* MKNetworkKit-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5B482C1215C676E300D80691 /* MKNetworkKit-iOS-Prefix.pch */,
+			);
+			path = "MKNetworkKit-iOS";
+			sourceTree = "<group>";
+		};
+		5B482C1C15C676E300D80691 /* YRDropdownView */ = {
+			isa = PBXGroup;
+			children = (
+				5B482C1D15C676E300D80691 /* LICENSE.md */,
+				5B482C1E15C676E300D80691 /* README.md */,
+				5B482C3515C676E300D80691 /* YRDropdownView */,
+			);
+			name = YRDropdownView;
+			path = ../../../github/local/3rd_party/YRDropdownView;
+			sourceTree = "<group>";
+		};
+		5B482C3515C676E300D80691 /* YRDropdownView */ = {
+			isa = PBXGroup;
+			children = (
+				5B482C3615C676E300D80691 /* bg-yellow.png */,
+				5B482C3715C676E300D80691 /* bg-yellow@2x.png */,
+				5B482C3815C676E300D80691 /* YRDropdownView.h */,
+				5B482C3915C676E300D80691 /* YRDropdownView.m */,
+			);
+			path = YRDropdownView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +342,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B1BE9BD15C2F06F00CD791C /* InfoPlist.strings in Resources */,
+				5B482C4915C676E300D80691 /* CHANGELOG.md in Resources */,
+				5B482C4B15C676E300D80691 /* README.md in Resources */,
+				5B482C6B15C676E300D80691 /* README.mdown in Resources */,
+				5B482C6F15C676E300D80691 /* LICENSE.md in Resources */,
+				5B482C7015C676E300D80691 /* README.md in Resources */,
+				5B482C7C15C676E300D80691 /* bg-yellow.png in Resources */,
+				5B482C7D15C676E300D80691 /* bg-yellow@2x.png in Resources */,
+				5B1F877515C6D48700CF1684 /* TBTableViewController.xib in Resources */,
+				5B1F877A15C6DD1700CF1684 /* TBDetailViewController.xib in Resources */,
+				5B13D27D15C7C93900C1985E /* TBAddViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +364,20 @@
 			files = (
 				5B1BE9BF15C2F06F00CD791C /* main.m in Sources */,
 				5B1BE9C315C2F06F00CD791C /* TBAppDelegate.m in Sources */,
+				5B482C4A15C676E300D80691 /* JSONKit.m in Sources */,
+				5B482C6215C676E300D80691 /* NSData+Base64.m in Sources */,
+				5B482C6315C676E300D80691 /* NSDate+RFC1123.m in Sources */,
+				5B482C6415C676E300D80691 /* NSDictionary+RequestEncoding.m in Sources */,
+				5B482C6515C676E300D80691 /* NSString+MKNetworkKitAdditions.m in Sources */,
+				5B482C6615C676E300D80691 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
+				5B482C6715C676E300D80691 /* MKNetworkEngine.m in Sources */,
+				5B482C6815C676E300D80691 /* MKNetworkOperation.m in Sources */,
+				5B482C6915C676E300D80691 /* Reachability.m in Sources */,
+				5B482C7E15C676E300D80691 /* YRDropdownView.m in Sources */,
+				5B482C9215C677E200D80691 /* TastypieEngine.m in Sources */,
+				5B1F877415C6D48700CF1684 /* TBTableViewController.m in Sources */,
+				5B1F877915C6DD1700CF1684 /* TBDetailViewController.m in Sources */,
+				5B13D27C15C7C93900C1985E /* TBAddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +485,7 @@
 				5B1BE9C815C2F06F00CD791C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

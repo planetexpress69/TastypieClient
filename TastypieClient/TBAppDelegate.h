@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TastypieEngine.h"
+
+// shorthand to access the delegate
+#define TheApp ((TBAppDelegate *)[UIApplication sharedApplication].delegate)
 
 @interface TBAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) TastypieEngine        *tastypieEngine;
+@property (strong, nonatomic) NSMutableArray        *dataSource;
+@property (assign, nonatomic) BOOL                  dirty;
 
 @end
