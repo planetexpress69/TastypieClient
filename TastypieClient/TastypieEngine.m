@@ -11,6 +11,9 @@
 @interface TastypieEngine()
 @property (nonatomic, strong) NSString *plainTextUsername;
 @property (nonatomic, strong) NSString *plainTextPassword;
+
+- (NSString *)assembleTokenForUser:(NSString *)name andPassword:(NSString *)password;
+- (NSString *)sNow;
 @end
 
 @implementation TastypieEngine
@@ -30,6 +33,10 @@
     self.plainTextUsername = name;
     self.plainTextPassword = password;
     DLog(@"Authorizing engine for'%@' and '%@'", self.plainTextUsername, self.plainTextPassword);
+    [[NSUserDefaults standardUserDefaults]setObject:self.plainTextUsername forKey:@"username"];
+    [[NSUserDefaults standardUserDefaults]setObject:self.plainTextPassword forKey:@"password"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    
 
 }
 
@@ -39,8 +46,10 @@
     
     NSString *sPath = [NSString stringWithFormat:API_PATH];
     
+    NSMutableDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"created", @"order_by", nil];
+    
     MKNetworkOperation *op = [self operationWithPath:sPath
-                                              params:nil
+                                              params:params
                                           httpMethod:@"GET"
                                                  ssl:NO];
     
@@ -87,15 +96,20 @@
     
     NSString *sPath = [NSString stringWithFormat:API_PATH];
     
+    
+    
     NSMutableDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                                    [user objectForKey:@"first_name"], @"first_name",
                                    [user objectForKey:@"last_name"], @"last_name",
+                                   [self sNow], @"created",
+                                   [self sNow], @"modified",
                                    nil];
     
     MKNetworkOperation *op = [self operationWithPath:sPath
                                               params:params
                                           httpMethod:@"POST"
                                                  ssl:NO];
+    
     [op setAuthorizationHeaderValue:[self assembleTokenForUser:self.plainTextUsername
                                                    andPassword:self.plainTextPassword] forAuthType:@"Basic"];
     
@@ -124,6 +138,7 @@
     NSMutableDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                                    [user objectForKey:@"first_name"], @"first_name",
                                    [user objectForKey:@"last_name"], @"last_name",
+                                   [self sNow], @"modified",
                                    nil];
     
 #warning TODO - get rid of the stupid leading "/"!
@@ -149,6 +164,44 @@
     [self enqueueOperation:op];
 }
 
+- (void)addUser:(NSDictionary *)user
+     onCompletion:(MKNKResponseBlock)completionBlock
+          onError:(MKNKErrorBlock)errorBlock {
+    
+    NSString *sPath = [NSString stringWithFormat:API_PATH_USER];
+    
+    
+    
+    NSMutableDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   [user objectForKey:@"username"], @"username",
+                                   [user objectForKey:@"password"], @"password",
+                                   
+                                   nil];
+    
+    MKNetworkOperation *op = [self operationWithPath:sPath
+                                              params:params
+                                          httpMethod:@"POST"
+                                                 ssl:NO];
+    
+    [op setAuthorizationHeaderValue:[self assembleTokenForUser:@"root"
+                                                   andPassword:@"xxxx"] forAuthType:@"Basic"];
+    
+    [op setPostDataEncoding:MKNKPostDataEncodingTypeJSON];
+    
+    [op onCompletion:^(MKNetworkOperation *completedOperation) {
+        
+        completionBlock(completedOperation);
+        
+    } onError:^(NSError* error) {
+        
+        errorBlock(error);
+        
+    }];
+    
+    [self enqueueOperation:op];
+}
+
+
 
 - (NSString *)assembleTokenForUser:(NSString *)name andPassword:(NSString *)password {
     
@@ -160,8 +213,11 @@
     NSData *authData = [[NSString stringWithFormat:@"%@:%@", name, password] dataUsingEncoding:NSUTF8StringEncoding];
     return [NSString stringWithFormat:@"%@", [authData base64EncodedString]];
     
-    
-    
 }
 
+- (NSString *)sNow {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss"];
+    return [formatter stringFromDate:[NSDate date]];
+}
 @end

@@ -8,6 +8,8 @@
 
 #import "TBAppDelegate.h"
 #import "TBTableViewController.h"
+#import "TBTabBarController.h"
+#import "TBPrefViewController.h"
 
 @implementation TBAppDelegate
 @synthesize window          = _window;
@@ -19,7 +21,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-        
+    
+    
+    
+            
     self.dirty = NO;
         
     /*
@@ -28,21 +33,42 @@
      */
     
     self.tastypieEngine = [[TastypieEngine alloc]initWithHostName:API_HOST];
-    [self.tastypieEngine authorizeForUser:@"root" andPassword:@"xxxx"];
+    
+    // load credentials from NSUserDefaults...
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *sUsername = [userDefaults objectForKey:@"username"];
+    NSString *sPassword = [userDefaults objectForKey:@"password"];
+
+    if (sUsername != nil && sPassword != nil) {
+        [self.tastypieEngine authorizeForUser:sUsername andPassword:sPassword];
+    }
+    
+    //
     
     self.tastypieEngine.portNumber = 8000;
     
-    
+    // left tab
+    TBPrefViewController *prefViewController = [[TBPrefViewController alloc]initWithNibName:@"TBPrefViewController"
+                                                                                     bundle:nil];
+    prefViewController.title = @"Settings";
+    UINavigationController *auxNaviController = [[UINavigationController alloc]initWithRootViewController:prefViewController];
+    auxNaviController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+
+    // right tab
     TBTableViewController *tbvc = [[TBTableViewController alloc]initWithNibName:@"TBTableViewController"
                                                                          bundle:nil];
     tbvc.title = @"Persons";
+    UINavigationController *mainNaviController = [[UINavigationController alloc]initWithRootViewController:tbvc];
+    mainNaviController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
+    // tabbarcontroller
+    TBTabBarController *tabBarController = [[TBTabBarController alloc]initWithNibName:@"TBTabBarController"
+                                                                               bundle:nil];
+    [tabBarController setViewControllers:[NSArray arrayWithObjects:mainNaviController, auxNaviController, nil]];
     
-    
-    UINavigationController *naviController = [[UINavigationController alloc]initWithRootViewController:tbvc];
-    
-    
-    self.window.rootViewController = naviController;
+    self.window.rootViewController = tabBarController;
     
     
     self.window.backgroundColor = [UIColor whiteColor];

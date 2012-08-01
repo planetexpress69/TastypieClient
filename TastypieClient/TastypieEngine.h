@@ -32,4 +32,8 @@
         onCompletion:(MKNKResponseBlock)completionBlock
              onError:(MKNKErrorBlock)errorBlock;
 
+- (void)addUser:(NSDictionary *)user
+   onCompletion:(MKNKResponseBlock)completionBlock
+        onError:(MKNKErrorBlock)errorBlock;
+
 @end

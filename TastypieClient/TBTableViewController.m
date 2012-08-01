@@ -11,7 +11,7 @@
 #import "TBAppDelegate.h"
 #import "TastypieEngine.h"
 #import "JSONKit.h"
-#import "YRDropDownView.h"
+#import "YRDropdownView.h"
 
 @interface TBTableViewController ()
 @property (nonatomic, strong)           TBDetailViewController  *detailViewController;
@@ -37,7 +37,6 @@
 - (void)viewDidLoad
 {
     
-    DLog(@"viewDidLoad!!!!!!!!");
     [super viewDidLoad];
 
     self.clearsSelectionOnViewWillAppear = YES;
@@ -50,6 +49,7 @@
     self.navigationItem.rightBarButtonItem = addItem;
     
     TheApp.dirty = YES; // triger initial load...
+
 }
 
 - (void)viewDidUnload
@@ -226,30 +226,29 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                                   [self.tableView reloadData];
                               }
                               
-                              
+                              /*
                               [YRDropdownView showDropdownInView:self.view
                                                            title:@"OK"
                                                           detail:[NSString stringWithFormat:@"%d %@", numberOfPersons, numberOfPersons > 1 ? @"persons" : @"person"]
                                                            image:nil
                                                         animated:YES
-                                                       hideAfter:1.0];
+                                                       hideAfter:1.0]; */
                               
                               TheApp.dirty = NO;
                               
                               
                           } else {
-                              
+                              [self.tableView reloadData];
                               [YRDropdownView showDropdownInView:self.view
                                                            title:@"Error"
-                                                          detail:@"Garbled answer. "
-                               @"Try again later."
+                                                          detail:@"Garbled answer. Try again later."
                                                            image:nil
                                                         animated:YES
                                                        hideAfter:1.0];
                           }
                       } onError:^(NSError *error) {
-                          
-                          
+                          TheApp.dataSource = nil;
+                          [self.tableView reloadData];
                           NSInteger errorCodeToDisplay = error.code;
                           NSString *errorTextToDisplay = @"An unknown error occured!";
                           

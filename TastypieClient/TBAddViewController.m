@@ -80,7 +80,7 @@
     [TheApp.tastypieEngine addPerson:oUser
                         onCompletion:^(MKNetworkOperation *completedOperation) {
                             
-                            DLog(@"completedOperation: %@", completedOperation);
+                            //DLog(@"completedOperation: %@", completedOperation);
                             TheApp.dirty = YES;
                             [self.delegate dismissAddViewController];
                             
