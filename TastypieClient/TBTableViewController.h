@@ -10,10 +10,5 @@
 #import "TBDetailViewController.h"
 #import "TBAddViewController.h"
 
-@interface TBTableViewController : UITableViewController<TBAddViewControllerDelegate>
-
-//@property (nonatomic, strong)           NSMutableArray          *persons;
-@property (nonatomic, strong)           TBDetailViewController  *detailViewController;
-@property (nonatomic, strong)           TBAddViewController     *addViewController;
-
+@interface TBTableViewController : UITableViewController <TBAddViewControllerDelegate>
 @end

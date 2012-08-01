@@ -10,16 +10,15 @@
 
 @protocol TBAddViewControllerDelegate
 - (void)dismissAddViewController;
-- (void)dismissAddViewControllerAndReload;
 @end
 
-@interface TBAddViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface TBAddViewController : UIViewController <UITableViewDataSource, UITextFieldDelegate>
 
-@property (nonatomic, weak)                 NSObject <TBAddViewControllerDelegate>  *delegate;
+@property (nonatomic, assign)               NSObject <TBAddViewControllerDelegate>  *delegate;
 @property (nonatomic, weak)     IBOutlet    UITableView                             *theTableView;
+@property (nonatomic, weak)     IBOutlet    UIBarButtonItem                         *saveButton;
 @property (nonatomic, strong)               UITextField                             *tfFirstName;
 @property (nonatomic, strong)               UITextField                             *tfLastName;
-@property (nonatomic, weak)     IBOutlet    UIBarButtonItem                         *saveButton;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)save:(id)sender;

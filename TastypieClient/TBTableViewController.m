@@ -14,14 +14,17 @@
 #import "YRDropDownView.h"
 
 @interface TBTableViewController ()
-
+@property (nonatomic, strong)           TBDetailViewController  *detailViewController;
+@property (nonatomic, strong)           TBAddViewController     *addViewController;
+@property (nonatomic, assign)           BOOL                    visible;
 @end
 
 @implementation TBTableViewController
-//@synthesize persons = _persons;
 @synthesize detailViewController = _detailViewController;
 @synthesize addViewController = _addViewController;
+@synthesize visible = _visible;
 
+#pragma mark - init & view's lifecycle
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -33,12 +36,11 @@
 
 - (void)viewDidLoad
 {
+    
+    DLog(@"viewDidLoad!!!!!!!!");
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = YES;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
@@ -47,34 +49,56 @@
     
     self.navigationItem.rightBarButtonItem = addItem;
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
-    
-    
-    
-    [self loadData];
+    TheApp.dirty = YES; // triger initial load...
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
+
 
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
+    
+    self.visible = YES;
     if (TheApp.dirty) {
         [self loadData];
     }
     
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [super viewDidDisappear:animated];
+    
+    self.visible = NO;
+    
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    DLog(@"!!!");
+    [super didReceiveMemoryWarning];
+    if ([self isViewLoaded] && self.view.window == nil)
+    {
+        self.view = nil;
+        self.detailViewController = nil;
+        self.addViewController = nil;
+    } else {
+        self.detailViewController = nil;
+        self.addViewController = nil;
+    }
+    
+    
+}
+
+#pragma mark - autorotation
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 #pragma mark - Table view data source
@@ -127,7 +151,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         NSInteger rowToDelete = indexPath.row;
-        DLog(@"rowToDelete: %d", rowToDelete);
         
         NSString *resourceUri = [[TheApp.dataSource objectAtIndex:rowToDelete]objectForKey:@"resource_uri"];
         
@@ -176,6 +199,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
      
 }
 
+#pragma mark - REST call list
 - (void)loadData {
     
     [TheApp.tastypieEngine persons:nil
@@ -244,7 +268,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                       }];
 }
 
-- (void)addPerson:(id)sender {
+#pragma mark - User triggered action 
+- (IBAction)addPerson:(id)sender {
     self.detailViewController.person = nil;
     //[self.navigationController pushViewController:self.detailViewController animated:YES];
     //
@@ -256,16 +281,19 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
 }
 
+#pragma mark - ViewControllers' lazy initializers
 - (TBDetailViewController *)detailViewController {
     if (!_detailViewController) {
         _detailViewController = [[TBDetailViewController alloc] initWithNibName:@"TBDetailViewController"
                                                                          bundle:nil];
+        _detailViewController.title = @"Info";
     }
     return _detailViewController;
 }
 
 - (TBAddViewController *)addViewController {
     if (!_addViewController) {
+
         _addViewController = [[TBAddViewController alloc] initWithNibName:@"TBAddViewController"
                                                                    bundle:nil];
         _addViewController.delegate = self;
@@ -273,9 +301,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     return _addViewController;
 }
 
+/*
 - (void)handleBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+ */
 
 #pragma mark - TBAddViewControllerDelegate methods
 - (void)dismissAddViewController {

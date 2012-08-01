@@ -10,13 +10,13 @@
 
 @interface TBDetailViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UITextField *tfFirstName;
-@property (nonatomic, strong) IBOutlet UITextField *tfLastName;
+@property (nonatomic, weak) IBOutlet    UITextField     *tfFirstName;
+@property (nonatomic, weak) IBOutlet    UITextField     *tfLastName;
 
-@property (nonatomic, strong) NSDictionary *person;
-@property (nonatomic, assign, getter = isEditing) BOOL edit;
+@property (nonatomic, strong)           NSDictionary    *person;
+@property (nonatomic, assign)           BOOL            edit;
 
-@property (nonatomic, strong) NSString *oldFirstName;
-@property (nonatomic, strong) NSString *oldLastName;
+@property (nonatomic, strong)           NSString        *oldFirstName;
+@property (nonatomic, strong)           NSString        *oldLastName;
 
 @end

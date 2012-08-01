@@ -53,7 +53,7 @@
     
 
     
-    if (!self.isEditing) {
+    if (!self.edit) {
         
         self.oldFirstName = self.tfFirstName.text;
         self.oldLastName = self.tfLastName.text;
@@ -147,7 +147,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 

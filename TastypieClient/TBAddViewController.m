@@ -20,16 +20,13 @@
 @synthesize tfLastName = _tfLastName;
 @synthesize saveButton = _saveButton;
 
+#pragma mark - init & view lifecycle
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil
                            bundle:nibBundleOrNil];
     if (self) {
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc addObserver:self
-               selector:@selector(textDidChange:)
-                   name:UITextFieldTextDidChangeNotification
-                 object:nil];
+        
     }
     return self;
 }
@@ -38,7 +35,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.theTableView.delegate = self;
     self.theTableView.dataSource = self;
     
 }
@@ -50,11 +46,26 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[NSNotificationCenter defaultCenter]addObserver:self
+           selector:@selector(textDidChange:)
+               name:UITextFieldTextDidChangeNotification
+             object:nil];
+}
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    
 }
 
+#pragma mark - autorotation
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+#pragma mark - user triggered actions
 - (IBAction)cancel:(id)sender {
     [self.delegate dismissAddViewController];
 }
@@ -70,22 +81,26 @@
                         onCompletion:^(MKNetworkOperation *completedOperation) {
                             
                             DLog(@"completedOperation: %@", completedOperation);
-                            [self.delegate dismissAddViewControllerAndReload];
+                            TheApp.dirty = YES;
+                            [self.delegate dismissAddViewController];
                             
                             //
                         } onError:^(NSError *error) {
                             DLog(@"error: %@", error);
+                            [self.delegate dismissAddViewController];
                         }];
     
-    [self.delegate dismissAddViewControllerAndReload];
+    
+    
+    //[self.delegate dismissAddViewControllerAndReload];
 }
+
+#pragma mark - UITableViewDatasource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 2;
 }
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -93,27 +108,16 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault
                                      reuseIdentifier:@"zzz"];
-        
-        
-        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
     }
     
     switch (indexPath.row) {
         case 0:
-            DLog(@"cell %d", indexPath.row);
             [cell.contentView addSubview:self.tfFirstName];
-            
-            
-            
             break;
         case 1:
-            DLog(@"cell %d", indexPath.row);
             [cell.contentView addSubview:self.tfLastName];
-            
             break;
-            
         default:
             break;
     }
@@ -155,55 +159,10 @@
     return _tfLastName;
 }
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    NSLog(@"textFieldShouldBeginEditing");
-    //textField.backgroundColor = [UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:1.0f];
-    return YES;
-}
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField{
-    NSLog(@"textFieldDidBeginEditing");
-}
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    NSLog(@"textFieldShouldEndEditing");
-    textField.backgroundColor = [UIColor clearColor];
-    
-    
-    
-    
-    return YES;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField{
-    NSLog(@"textFieldDidEndEditing");
-    
-    
-}
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    NSLog(@"textField:shouldChangeCharactersInRange:replacementString:");
-    
-    DLog(@"%d %d", self.tfFirstName.text.length, self.tfLastName.text.length);
-        
-    return YES;
-    
-    /*
-    if ([string isEqualToString:@"#"]) {
-        return NO;
-    }
-    else {
-        return YES;
-    } */
-}
-
-- (BOOL)textFieldShouldClear:(UITextField *)textField{
-    NSLog(@"textFieldShouldClear:");
-    return YES;
-}
+#pragma mark - UITextFieldDelegate methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    NSLog(@"textFieldShouldReturn: %@", textField);
     
     if (textField == self.tfFirstName ) {
             [self.tfFirstName resignFirstResponder];
@@ -214,21 +173,7 @@
             [self.tfFirstName becomeFirstResponder];
     }
     
-    
-    /*
-    if (textField == self.tfLastName) {
-        [self.tfFirstName becomeFirstResponder];
-    }
-    else {
-        [textField resignFirstResponder];
-    }*/
     return YES;
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"touchesBegan:withEvent:");
-    [self.theTableView endEditing:YES];
-    [super touchesBegan:touches withEvent:event];
 }
 
 - (void)textDidChange:(NSNotification *)notification {
